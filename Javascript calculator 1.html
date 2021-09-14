@@ -1,0 +1,144 @@
+<!-- code a  calculatorprogram to build the Calculator in JavaScript. -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Calculator JavaScript
+</title>
+
+<!-- Start the JavaScript Code -->
+<script>
+
+// Use  the insert() function to insert the number in textview.
+function insert(num) 
+{
+document.form1.textview.value = document.form1.textview.value + num;
+}
+
+// Use equal() function to return the result based on passed values.
+function equal()
+{
+var exp = document.form1.textview.value;
+if(exp)
+{
+document.form1.textview.value = eval(exp)
+}
+}
+
+/* Here, we create a backspace() function to remove the number at the end of the numeric series in textview. */
+function backspace()
+{
+var exp = document.form1.textview.value;
+document.form1.textview.value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
+}
+
+
+</script>
+
+<!-- Start the coding for CSS -->
+<style>
+/* Create the Outer layout of the Calculator. */
+.formstyle
+{
+width: 300px;
+height: 350px;
+margin: 20px auto;
+border: 3px solid skyblue;
+border-radius: 5px;
+padding: 20px;
+text-align: center;
+background-color: rgb(22, 22, 22);
+}
+
+/* Display top horizontal bar that contain some information. */
+h1 {
+	text-align: center;
+	padding: 23px;
+	background-color: rgb(57, 66, 70);
+	color: white;
+	}
+input:hover
+{
+background-color: rgb(245, 247, 245);
+}
+	
+*{
+margin: 0;
+padding: 0;
+}
+
+/* It is used to create the layout for calculator button. */
+.btn{
+width: 60px;
+height: 57px;
+font-size: 30px;
+margin: 0px;
+cursor: pointer;
+background-color: rgb(248, 98, 11);
+display:inline;
+color: white;
+border-style:solid solid none;
+    border-color:rgb(102, 102, 102);
+
+}
+
+/* It is used to display the numbers in  operations grey. */
+.btnG{
+    background-color:#aeaeaf;
+  }
+ 
+/* It is used to display the numbers, operations and results. */
+.textview{
+width: 223px;
+margin: 5px;
+font-size: 25px;
+padding: 5px;
+background-color: rgb(244, 248, 244);
+}	
+	
+</style>
+</head>
+<body>
+<h1> Calculator JavaScript </h1>
+ <div class= "formstyle">
+ <form name = "form1">
+ <input class= "textview" name = "textview">
+ </form>
+ <center>
+ <table >
+ <tr> 
+	<td> <input class = "btn" type = "btnG" value = "AC" onclick = "form1.textview.value = ' ' " > </td>
+	<td> <input  class = "btn" type = "btnG" value = "C" onclick = "backspace()" > </td>
+	<td> <input  class = "btn" type = "btnG" value = "/" onclick = "insert('/')" > </td>
+	<td> <input class = "btn" type = "btnG" value = "x" onclick = "insert('*')" > </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "btn" value = "7" onclick = "insert(7)" > </td>
+	<td> <input class = "btn" type = "btn" value = "8" onclick = "insert(8)" > </td>
+	<td> <input class = "btn" type = "btn" value = "9" onclick = "insert(9)" > </td>
+	<td> <input class = "btn" type = "btn" value = "-" onclick = "insert('-')" > </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "btn" value = "4" onclick = "insert(4)" > </td>
+	<td> <input class = "btn" type = "btn" value = "5" onclick = "insert(5)" > </td>
+	<td> <input class = "btn" type = "btn" value = "6" onclick = "insert(6)" > </td>
+	<td> <input class = "btn" type = "btn" value = "+" onclick = "insert('+')" > </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "btn" value = "1" onclick = "insert(1)" > </td>
+	<td> <input class = "btn" type = "btn" value = "2" onclick = "insert(2)" > </td>
+	<td> <input class = "btn" type = "btn" value = "3" onclick = "insert(3)" > </td>
+	<td rowspan = 5> <input class = "btn" style = "height: 110px" type = "button" value = "=" onclick = "equal()"> </td>
+	</tr>
+	<tr>
+	<td colspan = 2> <input class = "btn" style = "width: 106px" type = "button" value = "0" onclick = "insert(0)" > </td>
+	<td> <input class = "btn" type = "btn" value = "." onclick = "insert('.')"> </td>
+	</tr>
+	</table>
+	</center>
+ </div>
+ </body>
+ </html>
